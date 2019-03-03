@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Glavnoe eto dusha</title>
+    {% load staticfiles %}
+    <link rel="stylesheet", href="{% static 'css/bootstrap.min.css' %}", type="text/css">
+</head>
+<body background="{% static 'mainApp/image/picture.png' %}" class="img-thumbnail">
+  <div class="jumbotron">
+    <div class="container">
+      <h1>{% include "mainApp/include/some_html.html" %}</h1>
+      {% block content %}
+      {% endblock %}
+      <p>
+        <a href="/" class="btn btn-success btn-lg">Главная страница</a>
+        <a href="/news" class="btn btn-primary btn-lg">Новости &raquo;</a>
+        <a href="/contact" class="btn btn-info btn-lg">Контакты &raquo;</a>
+      </p>
+    </div>
+  </div>
+  <div class="container">
+    <hr>
+    &copy; Все права защищены 2019
+  </div>
+</body>
+</html>
