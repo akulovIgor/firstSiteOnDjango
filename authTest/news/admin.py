@@ -1,5 +1,16 @@
 from django.contrib import admin
-from news.models import Articles
+from news.models import Articles, Comments
 
-admin.site.register(Articles)
+
+class ArticlesInLine(admin.StackedInline):
+    model = Comments
+    extra = 2
+
+
+class ArticlesAdmin(admin.ModelAdmin):
+    fields = ['title', 'body', 'date']
+    inlines = [ArticlesInLine]
+
+
+admin.site.register(Articles, ArticlesAdmin)
 # Register your models here.
