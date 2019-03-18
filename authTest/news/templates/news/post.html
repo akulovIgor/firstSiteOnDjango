@@ -1,8 +1,15 @@
 {% extends 'mainApp/rapper.html' %}
 
+{% load staticfiles %}
 {% block content%}
-<h2 class="text-info">{{articles.title}}</h2>
-<h6 class="text-info">Опубликовано: {{articles.date|date:"Y-m-d"}} в
-    {{articles.date|date:"H:i:s"}}</h6>
-<p>{{articles.body|safe|linebreaks}}</p>
+<h2 class="text-info">{{article.title}}</h2>
+<h6 class="text-info">Опубликовано: {{article.date|date:"Y-m-d"}} в
+    {{article.date|date:"H:i:s"}}</h6>
+<p>{{article.body|safe|linebreaks}}</p>
+<h2>{{ article.ID }}</h2>
+<p><a href="/news/addLike/{{ article.id }}"> <img src="{% static 'mainApp/image/like.jpg' %}" width="25px" height="25px"></a>Like: {{article.likes}}</p>
+<hr>
+{% for comment in comments %}
+<p>{{ comment.comments_text }}</p>
+{% endfor %}
 {% endblock %}
