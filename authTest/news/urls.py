@@ -25,5 +25,6 @@ urlpatterns = [
      #                         template_name="news/posts.html")),
     path('', views.articles, name='articles'),
     re_path(r'^(?P<article_id>\d+)/$', views.article, name='article'),
-    re_path(r'^addLike/(?P<articles_id>\d+)/$', views.addLike, name='addLike'),
+    re_path(r'^(?P<articles_id>\d+)/addLike/$', views.addLike, name='addLike'),
+    re_path(r'^(?P<article_id>\d+)/addComment/$', views.addСomment, name='addComment'),
 ]

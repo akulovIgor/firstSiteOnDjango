@@ -5,6 +5,6 @@
     {% for post in articles %}
 <a href="/news/{{post.id}}"> <h3>{{post.title}}</h3> </a>
 <h5>{{post.date|date:"d-m-Y"}}</h5>
-<p><a href="/news/addLike/{{ post.id }}/"> <img src="{% static 'mainApp/image/like.jpg' %}" width="25px" height="25px"></a>{{post.likes}}</p>
+<p><a href="/news/{{ post.id }}/addLike/"> <img src="{% static 'mainApp/image/like.jpg' %}" width="25px" height="25px"></a>{{post.likes}}</p>
     {% endfor %}
 {% endblock %}

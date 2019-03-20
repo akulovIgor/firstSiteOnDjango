@@ -7,9 +7,14 @@
     {{article.date|date:"H:i:s"}}</h6>
 <p>{{article.body|safe|linebreaks}}</p>
 <h2>{{ article.ID }}</h2>
-<p><a href="/news/addLike/{{ article.id }}"> <img src="{% static 'mainApp/image/like.jpg' %}" width="25px" height="25px"></a>Like: {{article.likes}}</p>
+<p><a href="/news/{{ article.id }}/addLike/"> <img src="{% static 'mainApp/image/like.jpg' %}" width="25px" height="25px"></a>Like: {{article.likes}}</p>
 <hr>
 {% for comment in comments %}
 <p>{{ comment.comments_text }}</p>
 {% endfor %}
+<form action="/news/{{ article.id }}/addComment/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" class="button" value="Добавить комментарий">
+</form>
 {% endblock %}
