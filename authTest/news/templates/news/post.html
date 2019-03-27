@@ -12,9 +12,11 @@
 {% for comment in comments %}
 <p>{{ comment.comments_text }}</p>
 {% endfor %}
+{% if username %}
 <form action="/news/{{ article.id }}/addComment/" method="post">
     {% csrf_token %}
     {{ form }}
     <input type="submit" class="button" value="Добавить комментарий">
 </form>
+{% endif %}
 {% endblock %}

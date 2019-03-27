@@ -27,4 +27,5 @@ urlpatterns = [
     re_path(r'^(?P<article_id>\d+)/$', views.article, name='article'),
     re_path(r'^(?P<articles_id>\d+)/addLike/$', views.addLike, name='addLike'),
     re_path(r'^(?P<article_id>\d+)/addComment/$', views.addСomment, name='addComment'),
+    re_path(r'^page/(\d+)/$', views.articles, name='articles'),
 ]

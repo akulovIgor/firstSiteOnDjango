@@ -27,13 +27,17 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+TEMPLATE_DIRS = (
+    '/home/akulov/myvenv/bin/myfirstsite/firstSiteOnDjango/authTest/loginsys/temlates',
 
+)
 # Application definition
 
 INSTALLED_APPS = [
     'user',
     'mainApp',
     'news',
+    'loginsys',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,7 +61,9 @@ ROOT_URLCONF = 'authTest.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/home/akulov/myvenv/bin/myfirstsite/firstSiteOnDjango/authTest/loginsys/temlates',
+                 '/home/akulov/myvenv/bin/myfirstsite/firstSiteOnDjango/authTest/mainApp/templates',
+                 '/home/akulov/myvenv/bin/myfirstsite/firstSiteOnDjango/authTest/news/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -106,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'UTC'
 
